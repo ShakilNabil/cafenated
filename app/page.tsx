@@ -3,6 +3,7 @@
 import { useState, useEffect, FormHTMLAttributes } from "react";
 import Link from "next/link";
 import { satisfy } from "./fonts";
+import Image from "next/image";
 
 export default function LandingPage() {
 
@@ -15,9 +16,20 @@ export default function LandingPage() {
 
       <div className="flex flex-1 justify-center items-center">
         <section className=" max-w-[215px] md:max-w-sm w-full flex flex-col justify-center items-center">
-          <h1 className="text-white text-[24px] md:text-5xl md:mb-10 mb-6 w-full">Welcome to 
-            <span className={`${satisfy.className} text-[#FFFD6E] text-[32px] md:text-6xl md:mt-4 block text-right`}>Cafenated</span>
-          </h1>
+          <Image
+            src="/images/LOGO.png"
+            alt="Logo"
+            width={220}
+            height={64}>
+
+          </Image>
+
+          <Image 
+            src="/images/Coffee_spill.png" 
+            alt="Coffie Spill"
+            width={108}
+            height={98}>
+          </Image>
 
           <h2 className="text-white text-center mb-5">Sign in</h2>
 
