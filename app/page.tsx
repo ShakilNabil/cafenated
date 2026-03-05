@@ -2,7 +2,7 @@
 
 import { useState, useEffect, FormHTMLAttributes } from "react";
 import Link from "next/link";
-import { satisfy } from "./fonts";
+import { inter } from "./fonts";
 import Image from "next/image";
 
 export default function LandingPage() {
@@ -12,30 +12,70 @@ export default function LandingPage() {
   }
 
   return(
-    <div className="min-h-screen bg-[#592F2F] flex flex-col">
+    <div className="min-h-screen bg-[#592F2F] flex flex-col overflow-hidden">
 
-      <div className="flex flex-1 justify-center items-center">
-        <section className=" max-w-[215px] md:max-w-sm w-full flex flex-col justify-center items-center">
+      <div className="flex flex-1 flex-col items-center">
+        
+        {/* Spacer */}
+        <div className="flex-3"></div>
+
+        {/* Form Section */}
+        <section className="relative max-w-53.75 md:max-w-sm w-full flex flex-col justify-center items-center">
           <Image
             src="/images/LOGO.png"
             alt="Logo"
             width={220}
-            height={64}>
+            height={10}
+            className="z-10 scale-125 mb-10 ">
 
+          </Image>
+
+          <Image
+            src={"/images/Coffee_splash.png"}
+            alt="Coffee Trail"
+            width={300}
+            height={10}
+            className="absolute pointer-events-none scale-220 z-0 top-[-83] right-[-5] md:scale-175 md:top-[-125] md:right-[30]">
           </Image>
 
           <Image 
             src="/images/Coffee_spill.png" 
-            alt="Coffie Spill"
-            width={108}
-            height={98}>
+            alt="Coffee Spill"
+            width={150}
+            height={10}
+            className="absolute pointer-events-none right-[-91.25px] top-28.5">
           </Image>
 
-          <h2 className="text-white text-center mb-5">Sign in</h2>
+          <Image
+            src={"/images/Coffee_trail_1.png"}
+            alt="Coffee Trail"
+            width={62}
+            height={10}
+            className="absolute pointer-events-none -right-7.5 top-65.5 md:top-66.5">
+          </Image>
 
-          <form onSubmit={handleLoginSubmit} className="w-full">
+          <Image
+            src={"/images/Coffee_trail_2.png"}
+            alt="Coffee Trail"
+            width={35}
+            height={10}
+            className="absolute pointer-events-none right-0.75 top-65.5 md:top-66.5">
+          </Image>
 
-            <div>
+          <Image
+            src={"/images/Coffee_trail_3.png"}
+            alt="Coffee Trail"
+            width={150}
+            height={10}
+            className="absolute pointer-events-none -right-9.25 bottom-[-43.5px]">
+          </Image>
+
+          <h2 className="text-white text-center mb-5 ">SIGN IN</h2>
+
+          <form onSubmit={handleLoginSubmit} className="w-full flex flex-col items-center">
+
+            {/* Email Field Container */}
+            <div className="w-full">
               <label htmlFor="emailOrPhone" className="sr-only">Email</label>
               <input 
                 type="text"
@@ -45,7 +85,8 @@ export default function LandingPage() {
               /> 
             </div>
 
-            <div>
+            {/* Password Field Container */}
+            <div className="w-full">
               <label htmlFor="password" className="sr-only">Password</label>
               <input 
                 type="text"
@@ -54,16 +95,28 @@ export default function LandingPage() {
                 className="bg-[#131313]/60 text-[#D6CFCA] rounded-xl p-3 mb-4 w-full border border-transparent focus:outline-none focus:border-white/80 shadow-sm"  
               /> 
             </div>
-
-            <button type="submit" className="bg-[#9B4040] text-[#D6CFCA] rounded-xl p-3 w-full mb-3 shadow-md">Enter</button>  
-          </form>
-
-          <Link href={"/signup"} className="text-[#E8C26A] hover:text-[#da9f14] w-fit">Create an account</Link>  
+            
+            {/* Submit Btn */}
+            <button type="submit" className="bg-[#C89156]/50 text-white rounded-xl p-3 w-1/2 mb-3 shadow-md">Sign in</button> 
     
-        </section> 
+          </form>   
+        </section>
+
+        {/* Spacer */}
+        <div className="flex-1"></div>
+
+        {/* Link Section */}    
+        <div className="flex gap-10">
+          <Link href={"/signup"} className="text-[#E8C26A] hover:text-[#da9f14] w-fit">Create an account</Link>
+          <Link href={"/signup"} className="text-[#E8C26A] hover:text-[#da9f14] w-fit">Continue as guest</Link>
+        </div>
+
+        {/* Spacer */}
+        <div className="flex-1"></div>
+
       </div>
 
-      <p className=" text-white text-xs md:text-sm pb-15 text-center">CAFÉNATED COPYRIGHT ALL RIGHTS RESERVED 2026</p> 
+      <p className=" text-white text-xs md:text-sm mb-15 text-center">CAFÉNATED COPYRIGHT ALL RIGHTS RESERVED 2026</p> 
 
     </div>
   );
