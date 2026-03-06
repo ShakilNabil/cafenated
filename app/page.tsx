@@ -1,14 +1,8 @@
-"use client"
-
-import { useState, useEffect, FormHTMLAttributes } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import SigninForm from "@/components/ui/SigninForm";
 
 export default function LandingPage() {
-
-  function handleLoginSubmit(event: React.SubmitEvent<HTMLFormElement>){
-    event.preventDefault();      
-  }
 
   return(
     <div className="min-h-screen bg-[#592F2F] flex flex-col overflow-hidden">
@@ -25,7 +19,7 @@ export default function LandingPage() {
             alt="Logo"
             width={220}
             height={10}
-            className="z-10 scale-125 mb-10 ">
+            className="z-10 scale-125 mb-10">
 
           </Image>
 
@@ -42,7 +36,7 @@ export default function LandingPage() {
             alt="Coffee Spill"
             width={150}
             height={10}
-            className="absolute pointer-events-none right-[-91.25px] top-28.5">
+            className="absolute pointer-events-none right-[-91.25px] top-26">
           </Image>
 
           <Image
@@ -50,7 +44,7 @@ export default function LandingPage() {
             alt="Coffee Trail"
             width={62}
             height={10}
-            className="absolute pointer-events-none -right-7.5 top-65.5 md:top-66.5">
+            className="absolute pointer-events-none -right-7.5 top-63.5 md:top-64.5">
           </Image>
 
           <Image
@@ -58,7 +52,7 @@ export default function LandingPage() {
             alt="Coffee Trail"
             width={35}
             height={10}
-            className="absolute pointer-events-none right-0.75 top-65.5 md:top-66.5">
+            className="absolute pointer-events-none right-0.75 top-63.5 md:top-64.5">
           </Image>
 
           <Image
@@ -71,34 +65,8 @@ export default function LandingPage() {
 
           <h2 className="text-white text-center mb-5 ">SIGN IN</h2>
 
-          <form onSubmit={handleLoginSubmit} className="w-full flex flex-col items-center">
-
-            {/* Email Field Container */}
-            <div className="w-full">
-              <label htmlFor="emailOrPhone" className="sr-only">Email</label>
-              <input 
-                type="text"
-                id="emailOrPhone" 
-                placeholder="Email or phone number"
-                className="bg-[#131313]/60 text-[#D6CFCA] rounded-xl p-3 my-2 w-full border border-transparent focus:outline-none focus:border-white/80 shadow-sm"  
-              /> 
-            </div>
-
-            {/* Password Field Container */}
-            <div className="w-full">
-              <label htmlFor="password" className="sr-only">Password</label>
-              <input 
-                type="text"
-                id="password" 
-                placeholder="Password"
-                className="bg-[#131313]/60 text-[#D6CFCA] rounded-xl p-3 mb-4 w-full border border-transparent focus:outline-none focus:border-white/80 shadow-sm"  
-              /> 
-            </div>
-            
-            {/* Submit Btn */}
-            <button type="submit" className="bg-[#C89156]/50 text-white rounded-xl p-3 w-1/2 mb-3 shadow-md">Sign in</button> 
-    
-          </form>   
+          <SigninForm />
+             
         </section>
 
         {/* Spacer */}
